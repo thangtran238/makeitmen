@@ -34,7 +34,10 @@
   background: var(--sub-color);
   transition: .15s ease-in-out;
 }
-
+.alert {
+  color:crimson;
+  animation: alert 1s infinite;
+}
 .icon .numbers {
   width: 60px;
   height: 60px;
@@ -130,4 +133,25 @@
 
 .section:hover p {
   transform: scale(120%);
+}
+
+@keyframes alert {
+  0% {
+    color:aqua
+  }
+  20% {
+    color:chartreuse
+  }
+  40% {
+    color:greenyellow
+  }
+  60% {
+    color:floralwhite
+  }
+  80% {
+    color:limegreen
+  }
+  100% {
+    color:violet
+  }
 }

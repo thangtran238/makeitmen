@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background-image: url('')
 }
 
 body {
@@ -16,6 +17,7 @@ body {
     height: auto;
 }
 .header{
+    
     height:70px;
     margin-top:10px;
     display: flex;
@@ -43,12 +45,16 @@ body {
     align-items: center;
     padding: 5px;
     gap: 10px;
+  
 }
 .header .cart_title .cart_name h2{
     color: yellow;
-    border-right:solid 1px black ;
-    border-bottom:solid 3px black ;
-    border: solid 3px black;
+    border-bottom: solid 1px black;
+
+}
+
+.fa-cart-plus{
+    cursor: pointer;
 }
 
 .cart_user {
@@ -72,12 +78,16 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 3px;
 
 }
 .cart_user .user_img img{
     width: 50px;
     height: 50px;
     border-radius: 50px;
+    border:solid black 1px;
+    margin:3%;
+    padding: 2px;
 }
 
 .logout:hover{
@@ -158,6 +168,11 @@ body {
 .amount input{
     width: 20%;
     text-align:center;
+}
+.amount span{
+    width: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .amount .fa-circle-down:hover{
     cursor: pointer;
@@ -243,9 +258,22 @@ body {
     font-size:100%;
     cursor: pointer;
     gap: 3px;
+    text-decoration: none;
+    color:black;
 
 }
 .footer .frame-footer-checkout .checkout:hover .fa-circle-down{
-    color:yellow;
+    color:#2ecc71;
 }
+
+
+
+
+
+
+
+
+
+
+
 

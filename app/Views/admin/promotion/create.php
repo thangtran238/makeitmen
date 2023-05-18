@@ -1,6 +1,6 @@
 <?php 
 function appendPromo() {
-  include('../app/Models/database.php');
+  include('/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Models/database.php');
   if (isset($_POST['submit-promote'])) {
     $name = $_POST['name'];
     $discount = $_POST['discount'];

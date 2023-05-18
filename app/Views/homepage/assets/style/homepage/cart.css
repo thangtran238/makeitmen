@@ -1,0 +1,136 @@
+.cart-modal {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  right: 0;
+  left: 1100px;
+  background: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 999999;
+  overflow-y: auto;
+  max-height: 100vh; /* Adjust the maximum height as needed */
+}
+.cart-modal .cart-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+  align-items: center;
+  border-bottom: 1px solid var(--sub-color);
+}
+.cart-modal .cart-header button {
+  font-size: 24px;
+  color: var(--sub-color);
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.cart-modal .cart-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.cart-content .cart-item {
+  line-height: 40px;
+  border-top: 1px solid var(--sub-color);
+  border-bottom: 1px solid var(--sub-color);
+  border-radius: 6px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  gap: 12px;
+  color: white;
+}
+
+.cart-content .cart-item img {
+  width: 120px;
+}
+
+.cart-content .cart-item .volume {
+  width :150px;
+}
+.cart-content .cart-item .volume input {
+  width: 30px;
+  outline: none;
+  border: none;
+  height: 26px;
+  cursor:unset;
+}
+
+.cart-content .cart-item .volume button {
+  height: 25px;
+  width: 25px;
+  background: none;
+  border: 1px solid var(--sub-color);
+  color: var(--sub-color);
+  font-size: 16px;
+  cursor: pointer;
+  transition: .15s all ease;
+
+}
+
+.cart-content .cart-item .volume button:active {
+  background: var(--sub-color);
+  color: var(--main-color);
+}
+.cart-content .cart-item .delete {
+  display: flex;
+  justify-content: end;
+  width: 80%;
+}
+.cart-content .cart-item .delete button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--sub-color);
+  background:none;
+  outline: none;
+  color: var(--sub-color);
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: .15s all ease;
+}
+
+.cart-content .cart-item .delete button:active {
+  background: var(--sub-color);
+  color: var(--main-color);
+
+}
+
+.cart-modal .cart-footer {
+  padding: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--sub-color);
+
+}
+
+.cart-modal .cart-footer button {
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  color: var(--main-color);
+  background: var(--sub-color);
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.cart-modal .cart-footer button:last-child {
+  border: 1px solid var(--sub-color);
+  color: var(--sub-color);
+  background: var(--main-color);
+}

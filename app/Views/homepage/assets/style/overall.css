@@ -14,7 +14,7 @@
 
 body {
   font-family: Poppins, sans-serif;
-  height: 100vh;
+  height:3050px;
   transition: .15s ease;
 }
 .sub-color {
@@ -23,5 +23,6 @@ body {
 .container {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 

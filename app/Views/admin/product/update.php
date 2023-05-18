@@ -8,8 +8,8 @@
   <title>Admin</title>
   <style>
     <?php
-    include("../app/Views/admin/assets/style/overall.css");
-    include("../app/Views/admin/assets/style/adminpage/modal.css");
+    include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/style/overall.css");
+    include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/style/adminpage/modal.css");
     ?>
   </style>
 </head>
@@ -24,14 +24,14 @@ edit($id);
 if (isset($_POST['apply'])) {
   apply($id);
   ob_clean();
-  header('Location: http://localhost/project/makeitman/public/');
+  header('Location: http://localhost/project/makeitman/app/Views/admin/admin.php');
   exit;
 }
 
 
 function getDatabase($id)
 {
-  include('../app/Models/database.php');
+  include('/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Models/database.php');
   $sql_query = "SELECT CONCAT('PR', CAST(SUBSTR(productID, 3) AS UNSIGNED)) AS productID, pro_title,qty,category.typeof,price,pro_des,image FROM product,category 
   where product.categoryID = category.categoryID and CONCAT('PR', CAST(SUBSTR(productID, 3) AS UNSIGNED)) = '$id'  ORDER BY CAST(SUBSTR(productID, 3) AS UNSIGNED)";
   $res = $conn->query($sql_query);
@@ -49,7 +49,7 @@ function getDatabase($id)
 
 function applyDatabase($id, $newProName, $newQty, $newCate, $newPrice, $newProdes, $newImg, $newPromo)
 {
-  include('../app/Models/database.php');
+  include('/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Models/database.php');
   $sql_update = "UPDATE `product` SET `pro_title`='$newProName',`qty`='$newQty',
   `categoryID`='$newCate',`promoID`='$newPromo',`price`='$newPrice',`pro_des`='$newProdes',`image`='$newImg' 
   WHERE `productID` = '$id'";
@@ -62,7 +62,7 @@ function edit($id)
 
   <body>
     <div class="add-product">
-      <a href="http://localhost/project/makeitman/public/"> Back</a>
+      <a href="http://localhost/project/makeitman/app/Views/admin/admin.php"> Back</a>
       <form action="" method="post" enctype="multipart/form-data">
         <div class="post-infor">
           <input type="text" name="name" placeholder="Product Name" value="<?php echo $array['pro_title'] ?>" required />
@@ -74,7 +74,7 @@ function edit($id)
             <option value="AC">Accessory</option>
           </select>
           <select name="promo" id=""> <?php
-                                      include('./app/Models/database.php');
+                                      include('/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Models/database.php');
 
                                       $sqlQuery = "SELECT promoID FROM promotion";
                                       $res = $conn->query($sqlQuery);
@@ -162,6 +162,7 @@ function apply($id)
   let dropBtn = document.querySelector(".close");
 
   dropBtn.addEventListener("click", closeProductForm);
+  
 
   function closeProductForm() {
     let divToRemove = document.querySelector(".add-product");

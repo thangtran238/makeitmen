@@ -161,7 +161,8 @@ CREATE TABLE `product` (
   `categoryID` varchar(50) NOT NULL,
   `promoID` varchar(50) NOT NULL,
   `price` double NOT NULL,
-  `pro_des` varchar(255) NOT NULL
+  `pro_des` varchar(255) NOT NULL,
+  `image` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

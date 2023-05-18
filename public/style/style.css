@@ -35,7 +35,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px;
+  padding: 16px 32px;
 }
 
 .header > h2 {
@@ -43,26 +43,8 @@ body {
   font-weight: 400;
 }
 
-.log .sign-in, .log .sign-up {
-  padding: 6px 24px;
-  margin: 0 6px;
-  border-radius: 4px;
-  font-size: 15px;
-}
 
-.log .sign-in {
-  background: var(--sub-color);
-  border: none;
-  outline: none;
-  color: var(--main-color);
-}
 
-.log .sign-up {
-  background: transparent;
-  outline: none;
-  border: 1px solid var(--sub-color);
-  color: var(--sub-color);
-}
 
 .body {
    padding: 2%;
@@ -105,13 +87,13 @@ body {
   font-weight: 400;
 }
 
-.button-row {
+.change-index {
   margin: 20px 0;
   display: flex;
   justify-content: end;
 }
 
-.button-row button {
+.change-index a {
   padding: 12px 24px;
   border-radius: 6px;
   border: 1px solid var(--sub-color);
@@ -121,9 +103,10 @@ body {
   font-size: 16px;    
   transition: .3s ease;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.button-row button:hover {
+.change-index a:hover {
   background: var(--sub-color);
   color: var(--main-color);
 }

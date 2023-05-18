@@ -1,7 +1,7 @@
 <?php
 function productDeploy()
 {
-  include("../app/Models/database.php");
+  include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Models/database.php");
   $sqlQuery = "SELECT CONCAT('PR', CAST(SUBSTR(productID, 3) AS UNSIGNED)) AS productID, pro_title,qty,category.typeof,price,pro_des,image FROM product,category 
               where product.categoryID = category.categoryID ORDER BY CAST(SUBSTR(productID, 3) AS UNSIGNED)";
   $res = $conn->query($sqlQuery);
@@ -33,11 +33,15 @@ function productDeploy()
         <tr>
           <td><?php echo $row['productID'] ?></td>
           <td><?php echo $row['pro_title'] ?></td>
-          <td><?php echo $row['qty'] ?></td>
+          <td><?php 
+          if ($row['qty'] < 1) {
+            echo "<span class='alert'>Out of Order</span>";
+          } else {
+          echo $row['qty']; } ?></td>
           <td><?php echo $row['typeof'] ?></td>
           <td><?php echo number_format($row['price']) . " VND" ?></td>
           <td><?php echo $row['pro_des'] ?></td>
-          <td><img src="../public/img/<?php echo $row['image'] ?>"></td>
+          <td><img src="/project/makeitman/public/img/<?php echo $row['image'] ?>"></td>
           <td>
             <a href="http://localhost/project/makeitman/app/Views/admin/product/update.php?id=<?php echo $row['productID'] ?>">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->

@@ -1,6 +1,5 @@
 <?php
-echo getcwd();
-include  "../app/Controllers/AdminController.php";
+include  "/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Controllers/AdminController.php";
 
 ?>
 <!DOCTYPE html>
@@ -14,13 +13,13 @@ include  "../app/Controllers/AdminController.php";
   <style>
     <?php
 
-    include( "../app/Views/admin/assets/style/overall.css");
-    include( "../app/Views/admin/assets/style/adminpage/header.css");
-    include( "../app/Views/admin/assets/style/adminpage/body.css");
-    include( "../app/Views/admin/assets/style/adminpage/revenue.css");
-    include( "../app/Views/admin/assets/style/adminpage/table.css");
-    include( "../app/Views/admin/assets/style/adminpage/modal.css");
-
+    include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/style/overall.css");
+    include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/style/adminpage/header.css");
+    include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/style/adminpage/body.css");
+    include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/style/adminpage/revenue.css");
+    include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/style/adminpage/table.css");
+    include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/style/adminpage/modal.css");
+    include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/revenue/revenue.php");
 
     ?>
   </style>
@@ -35,7 +34,7 @@ include  "../app/Controllers/AdminController.php";
         </div>
         <div class="profile">
           <p>Hello, <span class="sub-color">Admin</span> </p>
-          <a href="#">Log out</a>
+          <a href="../homepage/homepage.php">Log out</a>
         </div>
       </section>
       <section class="body">
@@ -99,10 +98,23 @@ include  "../app/Controllers/AdminController.php";
     </div>
     <div class="display-revenue hide">
       <div class="modal-header">
-        Revenue
+        Revenue Management
       </div>
       <div class="modal-body">
-        Detail Revenue
+        <div class="revenue-option">
+          <div class="info">
+            <?php revenueDay() ?>
+          </div>
+          <div class="info">
+            <?php revenueWeek() ?>
+          </div>
+          <div class="info">
+            <?php revenueMonth() ?>
+          </div>
+        </div>
+        <div class="revenue-custom">
+          <a href="./revenue/pages/custom.php">Custom</a>
+        </div>
       </div>
       <div class="modal-footer">
         <button>Close</button>
@@ -117,8 +129,8 @@ include  "../app/Controllers/AdminController.php";
 </body>
 <script>
   <?php
-  include("../app/Views/admin/assets/js/activeBtn.js");
-  include("../app/Views/admin/assets/js/appendAddForm.js");
+  include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/js/activeBtn.js");
+  include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/js/appendAddForm.js");
   ?>
 </script>
 

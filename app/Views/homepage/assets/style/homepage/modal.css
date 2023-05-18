@@ -1,0 +1,213 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+}
+
+.modal {
+  height: 450px;
+  width: 800px;
+  background :#303030;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+  top: 100px;
+  left : 400px;
+  z-index: 1000;
+}
+
+.change-function {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.function {
+  flex: 10;
+
+}
+
+.switch {
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 100%;
+  background:transparent;
+  color: #ccc;
+  font-size: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.active {
+  color: #fff
+}
+
+.switch span {
+  width: 0%;
+  position: absolute;
+  bottom: 0;
+}
+
+.switch.active span {
+  display: block;
+  height: 1px;
+  border-bottom:2px solid white;
+  animation: underline .3s ease-in-out forwards;
+}
+
+.function {
+  display: flex;
+}
+.intro-signin {
+  flex: 1;
+  position: relative;
+}
+.intro-signin p {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: left;
+  font-size: 30px;
+  color: white;
+}
+.intro-signin p:first-child {
+  padding: 80px;
+  line-height: 55px;
+
+}
+.intro-signin p:last-child {
+  padding: 105px;
+  line-height: 55px; 
+  opacity: 0.7;
+
+}
+
+.sub-color {
+  color: var(--sub-color)
+}
+
+.form-signin {
+  flex: 1;
+}
+
+.form-signin form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 20px 40px 0;
+}
+
+.form-signin form > label{
+  width: 100%;
+}
+.form-signin form > label > input {
+  width: 100%;
+  height: 40px;
+  border:none;
+  border-bottom: 1px solid var(--sub-color);
+  outline: none;
+  background: transparent;
+  color: var(--sub-color);
+  font-size: 16px;
+}
+.form-signin form > label > input::placeholder {
+  padding: 6px;
+  color: var(--sub-color);
+  font-size: 16px;
+
+}
+.form-signin form > input {
+  width: 100%;
+  outline: none;
+  border: 1px solid var(--sub-color);
+  background-color: transparent;
+  border-radius: 12px;
+  font-size: 16px;
+  padding: 18px 0;
+  color: var(--sub-color);
+}
+
+.form-signup {
+  flex: 1;
+}
+
+.close {
+  margin-right: 12px;
+  background: none;
+  border: none;
+  color: var(--sub-color);
+  transition: all .3s ease;
+}
+.close:hover { 
+  cursor: pointer;
+  transform: scale(150%);
+}
+
+.intro-signup {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  text-align: center;
+  color: white;
+}
+
+.form-signup form {
+  padding: 12px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+.form-signup form label {
+  width: 100%;
+  display: flex;
+}
+.form-signup form > input {
+  border: 1px solid var(--sub-color);
+  width: 100%;
+  padding: 12px 0;
+  background: transparent;
+  color: var(--sub-color);
+  font-size: 16px;
+  border-radius: 12px;
+}
+.form-signup form label input {
+  width: 100%;
+  height: 40px;
+  margin: 6px;
+  padding: 0 6px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid var(--sub-color);
+  color: var(--sub-color);
+  font-size: 16px; 
+}
+.form-signup form label input::placeholder {
+  color: var(--sub-color);
+  font-size: 16px;
+}
+
+
+
+
+@keyframes underline {
+  0% {width: 0}
+  50% {width: 50%}
+  100% {width: 100%}
+}

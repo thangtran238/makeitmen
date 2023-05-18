@@ -9,12 +9,11 @@ $array = getDatabase($id);
 if (isset($_POST['apply'])) {
   apply($id);
   ob_clean();
-  header('Location: http://localhost/project/makeitman/public/');
-
+  header('Location: http://localhost/project/makeitman/app/Views/admin/admin.php');
 }
 function getDatabase($id)
 {
-  include('../app/Models/database.php');
+  include('/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Models/database.php');
   $sql_query = "SELECT CONCAT('US', CAST(SUBSTR(account.userID, 3) AS UNSIGNED)) AS userID, fullname, phone, email, address,username, password, status FROM `users`,`account`,`role` WHERE `account`.`userID` = `users`.`userID` and users.roleID = role.roleID and `account`.`userID` = '$id' ORDER BY CAST(SUBSTR(account.userID, 3) AS UNSIGNED);";
   $res = $conn->query($sql_query);
   $row = mysqli_fetch_array($res);
@@ -39,7 +38,7 @@ function apply($id)
 {
   if (
     isset($_POST['name']) || isset($_POST['phone']) || isset($_POST['email'])
-    || isset($_POST['address']) || isset($_POST['username']) || isset ($_POST['password'])
+    || isset($_POST['address']) || isset($_POST['username']) || isset($_POST['password'])
 
   ) {
     $name = $_POST['name'];
@@ -48,20 +47,22 @@ function apply($id)
     $address = $_POST['address'];
     $username = $_POST['username'];
     $password = $_POST['password'];
-
-    }
-    updateUser($id,$name,$phone,$email,$address);
-    updateAccount($id,$username,$password);
   }
+  updateUser($id, $name, $phone, $email, $address);
+  updateAccount($id, $username, $password);
+}
 
-function updateUser($id,$newName,$newPhone,$newEmail,$newAddress) {
-  include('../app/Models/database.php');
+function updateUser($id, $newName, $newPhone, $newEmail, $newAddress)
+{
+  include('/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Models/database.php');
+
   $sql_update = "UPDATE `users` SET `fullname`='$newName', `phone`='$newPhone', `email`='$newEmail', `address`='$newAddress'
   WHERE userID = '$id'";
   return $conn->query($sql_update);
 }
-function updateAccount($id,$newUsername,$newPassword) {
-  include('../app/Models/database.php');
+function updateAccount($id, $newUsername, $newPassword)
+{
+  include('/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Models/database.php');
   $sql_update = "UPDATE `account` SET `username`='$newUsername',`password`='$newPassword'
   where `userID` = '$id'";
   return $conn->query($sql_update);
@@ -77,17 +78,13 @@ function updateAccount($id,$newUsername,$newPassword) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin</title>
-  <style>
-    <?php
-    include("../app/Views/admin/assets/style/overall.css");
-    include("../app/Views/admin/assets/style/adminpage/modal.css");
-    ?>
-  </style>
+  <link rel="stylesheet" href="../assets/style/overall.css">
+  <link rel="stylesheet" href="../assets/style/adminpage/modal.css">
 </head>
 
 <body>
   <div class="add-product">
-    <a href="http://localhost/project/makeitman/public/"> Back</a>
+    <a href="http://localhost/project/makeitman/app/Views/admin/admin.php"> Back</a>
     <form action="" method="post">
       <div class="post-infor">
         <input type="text" name="name" placeholder="Full Name" value="<?php echo $array['fullname'] ?>" />

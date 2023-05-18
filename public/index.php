@@ -16,10 +16,6 @@
     <div class="wrapper">
       <div class="header">
         <h2><span class="sub-color">MAKEIT</span>Men.</h2>
-        <div class="log">
-          <button class="sign-in">Sign In</button>
-          <button class="sign-up">Sign Up</button>
-        </div>
       </div>
       <div class="body">
         <div class="slideshow">
@@ -36,8 +32,8 @@
                   velit laudantium ipsum aliquid aspernatur, iusto rem, sit
                   quisquam architecto!
                 </p>
-                <div class="button-row">
-                  <button>Get Start!</button>
+                <div class="change-index">
+                  <a href="http://localhost/project/makeitman/app/Views/homepage/homepage.php">Get Start!</a>
                 </div>
               </div>
               <img src="../public/style/img/slider1.jpg" alt="" />
@@ -54,8 +50,8 @@
                   velit laudantium ipsum aliquid aspernatur, iusto rem, sit
                   quisquam architecto!
                 </p>
-                <div class="button-row">
-                  <button>Get Start!</button>
+                <div class="change-index">
+                  <a href="http://localhost/project/makeitman/app/Views/homepage/homepage.php">Get Start!</a>
                 </div>
               </div>
               <img src="../public/style/img/slider2.jpg" alt="" />
@@ -72,8 +68,8 @@
                   velit laudantium ipsum aliquid aspernatur, iusto rem, sit
                   quisquam architecto!
                 </p>
-                <div class="button-row">
-                  <button>Get Start!</button>
+                <div class="change-index">
+                  <a href="http://localhost/project/makeitman/app/Views/homepage/homepage.php">Get Start!</a>
                 </div>
               </div>
               <img src="../public/style/img/slider3.jpg" alt="" />

@@ -10,7 +10,7 @@ ob_start();
 if(isset($_POST['apply'])) {
   apply($id);
   ob_clean();
-  header('Location: http://localhost/project/makeitman/public/');
+  header('Location: http://localhost/project/makeitman/app/Views/admin/admin.php');
   exit;
 }
 
@@ -22,15 +22,15 @@ if(isset($_POST['apply'])) {
   <title>Admin</title>
   <style>
     <?php
-    include("../app/Views/admin/assets/style/overall.css");
-    include("../app/Views/admin/assets/style/adminpage/modal.css");
+    include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/style/overall.css");
+    include("/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Views/admin/assets/style/adminpage/modal.css");
     ?>
   </style>
 </head>
 
 <body>
   <div class="add-product">
-    <a href="http://localhost/project/makeitman/public/"> Back</a>
+    <a href="http://localhost/project/makeitman/app/Views/admin/admin.php"> Back</a>
     <form action="" method="post">
       <div class="post-infor">
         <input type="text" name="name" placeholder="Promote Name" value="<?php echo $array['promo_name'] ?>"/>
@@ -57,7 +57,7 @@ if(isset($_POST['apply'])) {
 <?php 
   function getDatabase($id)
 {
-  include('../app/Models/database.php');
+  include('/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Models/database.php');
   $sql_query = "SELECT CONCAT('PROMO', CAST(SUBSTR(promoID, 6) AS UNSIGNED)) AS promoID, promo_name, discount, status
   FROM promotion where promoID = '$id' ORDER BY CAST(SUBSTR(promoID, 6) AS UNSIGNED) ";
   $res = $conn->query($sql_query);
@@ -70,7 +70,7 @@ if(isset($_POST['apply'])) {
 }
 function applyDatabase($id, $newProName, $newDis, $newStatus)
 {
-  include('../app/Models/database.php');
+  include('/Schooling/IT/Enviroment/xampp/htdocs/project/makeitman/app/Models/database.php');
   $sql_update = "UPDATE `promotion` SET `promoID`='$id',`promo_name`='$newProName',`discount`='$newDis',`status`='$newStatus'
   where `promoID` = '$id'";
   return $conn->query($sql_update);

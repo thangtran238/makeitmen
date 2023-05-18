@@ -1,7 +1,7 @@
 .content {
-  background: #fff;
   height: 100%;
   display: flex;
+  background: rgba(162, 153, 136, 0.498);
 }
 
 .side-bar {
@@ -13,27 +13,210 @@
   top:80px;
   bottom: 0;
   width: 200px;
-  padding: 20px 0;
   color: white;
+}
+.tag ul,.detail ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.tag li,.detail li {
+  list-style-type: none;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 12px 24px;
+}
+.tag a {
+  text-decoration: none;
+  color: white;
+}
+.detail li {
+  font-size: 16px;
+}
+.items {
+  position: absolute;
+  top: 80px;
+  height: 160px;
+  left: 200px;
+  right: 0;
+  z-index: 1;
+}
+
+.items .banner {
+  background: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+.items .banner h2 {
+  font-size: 36px;
+  font-weight: 400;
+  color:white;
+  margin: 12px 0;
+  
+}
+
+.items .banner small {
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+}
+.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+.sub-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0 24px 0;
+}
+.sub-title h2{
+  font-weight: 500;
+}
+.sub-title a {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+}
+
+.products .page {
+  display: flex;
+  justify-content: start;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.products form {
+  width: 22%;
+  margin-bottom: 20px;
+  background: linear-gradient(60deg, var(--main-color),var(--main-color),var(--main-color), var(--sub-color));
+  border-radius: 6px;
+  padding: 24px 6px;
+  line-height: 28px;
 }
 
 
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  position:relative;
+}
+.product .reaction-icon {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+}
+.product .reaction-icon button {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 2px 4px;
+  border-radius: 6px;
+}
+.product img {
+  transition: 0.5s;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.product h4 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+  font-weight: 500;
+}
+.product p {
+  font-weight: 400;
+}
+
+.product h4, .product p {
+  transition-delay: 0.2s;
+  transition: 0.5s;
+}
+
+.products form .reaction-button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: .15s;
+}
+
+.products form .reaction-button button{
+  margin: 6px 0;
+  padding: 8px 0;
+  border-radius: 6px;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 300;  
+}
+
+.products form .reaction-button button:first-child {
+  border: none;
+  background: var(--sub-color);
+
+}
+
+.products form .reaction-button button:last-child {
+  border: 1px solid var(--sub-color);
+  background: var(--main-color);
+  color: var(--sub-color);
+}
+
+.products form:hover .product img {
+  transform: translateY(-120px) rotate(-25deg);
+}
 
 
+.products form:hover .product h4 {
+  transform: translate(-38px, -50px);
+}
+.products form:hover .product p {
+  transform: translate(-64px, -45px);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.products form:hover  .reaction-button {
+  visibility: visible;
+  opacity: 100;
+  transform: translate(0, -15px);
+}
 
 .items {
   flex: 10;
+}
+
+form.disabled .product h4 {
+  color: #eeeeee27;
+  text-decoration: line-through;
+}
+
+form.disabled button {
+  text-decoration: line-through;
+}
+
+li.active {
+  background: var(--sub-color);
+  width: 100%;
+  display: inline-block;
+}
+
+li.active a {
+  color: var(--main-color);
+
 }
